@@ -1,0 +1,12 @@
+.read-icon {
+  position: fixed;
+  z-index: 9000;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: inset 0px 0px 3px 0px;
+  cursor: pointer;
+}
+
+.read-icon:hover {
+  box-shadow: inset 0px 0px 4px 0px;
+}

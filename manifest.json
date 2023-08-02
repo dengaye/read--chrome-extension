@@ -1,0 +1,17 @@
+{
+  "name": "Read World",
+  "description": "Reading World Extension",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "/popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["./scripts/read/read.js"],
+      "css": ["./scripts/read/read.css"]
+    }
+  ],
+  "permissions": ["activeTab"]
+}
