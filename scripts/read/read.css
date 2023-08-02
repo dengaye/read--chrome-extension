@@ -2,11 +2,44 @@
   position: fixed;
   z-index: 9000;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 50%;
   box-shadow: inset 0px 0px 3px 0px;
   cursor: pointer;
+  background-color: #fff;
 }
 
 .read-icon:hover {
   box-shadow: inset 0px 0px 4px 0px;
+}
+
+.read-icon img {
+  width: 20px;
+}
+
+.read-icon::before {
+  content: '';
+  display: block;
+  width: 23px;
+  height: 29px;
+  background: url('chrome-extension://__MSG_@@extension_id__/../../images/audio.png') no-repeat;
+  background-size: 23px 87px;
+  background-position: 0 -58px; /* 默认显示第三张 */
+  padding: 4px;
+  filter: invert(1);
+}
+
+.read-icon.animation::before {
+  animation: voiceplay 2s infinite step-start;
+}
+
+@keyframes voiceplay{
+  0%, 100%{
+    background-position: 0 -58px; 
+  }
+  33.333%{
+    background-position: 0 0;
+  }
+  66.666%{
+    background-position: 0 -29px;
+  }
 }

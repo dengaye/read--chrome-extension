@@ -72,3 +72,29 @@ HTML files。
 ### 更新
 当需要重新加载插件时，可以进入 `chrome://extensions/` ，找到插件，并点击更新按钮。
 ![reload](./docs/reload.png)
+
+
+### 常用技能
+1. 引入资源
+在 content_scripts 中:
+```js
+const image = chrome.runtime.getURL('image.png');
+
+```
+在 css 中：
+```
+ background-image:url('chrome-extension://__MSG_@@extension_id__/background.png');
+```
+
+所有的资源需要现在 manifest.json 中配置，
+```json
+{
+  "web_accessible_resources": [
+    {
+      "resources": ["image/*.svg"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
+
+```

@@ -3,9 +3,6 @@
   "description": "Reading World Extension",
   "version": "1.0",
   "manifest_version": 3,
-  "action": {
-    "default_popup": "/popup/popup.html"
-  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
@@ -13,5 +10,11 @@
       "css": ["./scripts/read/read.css"]
     }
   ],
-  "permissions": ["activeTab"]
+  "permissions": ["activeTab"],
+  "web_accessible_resources": [
+    {
+      "resources": ["images/*.svg", "images/*.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }
